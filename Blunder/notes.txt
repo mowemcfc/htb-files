@@ -1,0 +1,2 @@
+use brute force mitigation in searchsploit (PY vers found online) w/ wordlist made using cewl
+/admin login - fergus:RolandDeschain

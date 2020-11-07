@@ -1,0 +1,18 @@
+nothing on initial inspection
+dirbuster revealed /cdn-cgi/login.php
+use u = admin p = MEGACORP_4dm1n!! from Archetype for some reason???? - now have admin acc 
+accounts page, upload page locked to higher perms
+brute force id param for accounts page to find id=30 is superadmin acc
+copy su user cookie 86575 and craft http to access and upload php-reverse-shell
+upgrade terminal {
+	SHELL=/bin/bash script -q /dev/null
+	Ctrl-Z
+	stty raw -echo
+	fg
+	reset
+	xterm
+}
+access web directory and get robert creds from db file
+/usr/bin/bugtracker has suid bit, uses relative path to cat
+hijack path, add /bin/sh to new cat binary and rerun bugtracker
+root creds: ftpuser / mc@F1l3ZilL4

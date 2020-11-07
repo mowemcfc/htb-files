@@ -1,0 +1,10 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-28 21:18 AWST
+Nmap scan report for 10.10.10.191
+Host is up (0.066s latency).
+Not shown: 998 filtered ports
+PORT   STATE  SERVICE VERSION
+21/tcp closed ftp
+80/tcp open   http    Apache httpd 2.4.41 ((Ubuntu))
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 14.76 seconds

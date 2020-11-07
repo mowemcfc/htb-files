@@ -1,0 +1,7 @@
+ftp login with creds from oopsie
+zip2john -> john
+admin, qwerty789
+sqlmap -> --os-shell
+/var/www/html/dashboard.php contains creds
+postgres, P@s5w0rd!
+

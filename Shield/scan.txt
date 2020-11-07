@@ -1,0 +1,94 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-11-07 16:19 AWST
+NSE: Loaded 151 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 16:19
+Completed NSE at 16:19, 0.00s elapsed
+Initiating NSE at 16:19
+Completed NSE at 16:19, 0.00s elapsed
+Initiating NSE at 16:19
+Completed NSE at 16:19, 0.00s elapsed
+Initiating Ping Scan at 16:19
+Scanning 10.10.10.29 [4 ports]
+Completed Ping Scan at 16:19, 0.27s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 16:19
+Completed Parallel DNS resolution of 1 host. at 16:19, 0.01s elapsed
+Initiating SYN Stealth Scan at 16:19
+Scanning 10.10.10.29 [65535 ports]
+Discovered open port 80/tcp on 10.10.10.29
+Discovered open port 3306/tcp on 10.10.10.29
+SYN Stealth Scan Timing: About 4.63% done; ETC: 16:30 (0:10:39 remaining)
+SYN Stealth Scan Timing: About 13.46% done; ETC: 16:26 (0:06:32 remaining)
+SYN Stealth Scan Timing: About 17.52% done; ETC: 16:27 (0:07:08 remaining)
+SYN Stealth Scan Timing: About 23.65% done; ETC: 16:27 (0:06:40 remaining)
+SYN Stealth Scan Timing: About 29.31% done; ETC: 16:27 (0:06:11 remaining)
+SYN Stealth Scan Timing: About 34.91% done; ETC: 16:27 (0:05:43 remaining)
+SYN Stealth Scan Timing: About 41.20% done; ETC: 16:27 (0:05:05 remaining)
+SYN Stealth Scan Timing: About 47.48% done; ETC: 16:27 (0:04:30 remaining)
+SYN Stealth Scan Timing: About 52.90% done; ETC: 16:27 (0:04:04 remaining)
+Stats: 0:04:58 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 55.82% done; ETC: 16:27 (0:03:55 remaining)
+Stats: 0:04:58 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 55.87% done; ETC: 16:27 (0:03:55 remaining)
+Stats: 0:05:00 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 56.31% done; ETC: 16:27 (0:03:53 remaining)
+SYN Stealth Scan Timing: About 64.26% done; ETC: 16:27 (0:03:04 remaining)
+SYN Stealth Scan Timing: About 71.39% done; ETC: 16:27 (0:02:24 remaining)
+SYN Stealth Scan Timing: About 77.51% done; ETC: 16:27 (0:01:53 remaining)
+SYN Stealth Scan Timing: About 84.78% done; ETC: 16:27 (0:01:15 remaining)
+SYN Stealth Scan Timing: About 90.34% done; ETC: 16:27 (0:00:48 remaining)
+Completed SYN Stealth Scan at 16:27, 491.00s elapsed (65535 total ports)
+Initiating Service scan at 16:27
+Scanning 2 services on 10.10.10.29
+Completed Service scan at 16:27, 36.61s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against 10.10.10.29
+Retrying OS detection (try #2) against 10.10.10.29
+Initiating Traceroute at 16:27
+Completed Traceroute at 16:27, 0.25s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 16:27
+Completed Parallel DNS resolution of 2 hosts. at 16:27, 0.01s elapsed
+NSE: Script scanning 10.10.10.29.
+Initiating NSE at 16:27
+Completed NSE at 16:28, 5.89s elapsed
+Initiating NSE at 16:28
+Completed NSE at 16:28, 0.97s elapsed
+Initiating NSE at 16:28
+Completed NSE at 16:28, 0.00s elapsed
+Nmap scan report for 10.10.10.29
+Host is up (0.24s latency).
+Not shown: 65533 filtered ports
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Microsoft IIS httpd 10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+3306/tcp open  mysql   MySQL (unauthorized)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2016|2012|2008|10 (91%)
+OS CPE: cpe:/o:microsoft:windows_server_2016 cpe:/o:microsoft:windows_server_2012 cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_10:1607
+Aggressive OS guesses: Microsoft Windows Server 2016 (91%), Microsoft Windows Server 2012 (85%), Microsoft Windows Server 2012 or Windows Server 2012 R2 (85%), Microsoft Windows Server 2012 R2 (85%), Microsoft Windows Server 2008 R2 (85%), Microsoft Windows 10 1607 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.573 days (since Sat Nov  7 02:43:26 2020)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   236.62 ms 10.10.14.1
+2   236.10 ms 10.10.10.29
+
+NSE: Script Post-scanning.
+Initiating NSE at 16:28
+Completed NSE at 16:28, 0.00s elapsed
+Initiating NSE at 16:28
+Completed NSE at 16:28, 0.00s elapsed
+Initiating NSE at 16:28
+Completed NSE at 16:28, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 540.82 seconds
+           Raw packets sent: 131467 (5.788MB) | Rcvd: 343 (15.788KB)

@@ -1,0 +1,6 @@
+splunkd server on https://11.129.11.123:8089
+admin login disabled for remote access
+add doctors.htb to /etc/hosts
+SSTI with jinja via /archive link - can get RCE with PATT
+linpeas shows @reboot running blog.sh - yet to confirm root permissions
+linpeas reveals apache HTTP logs including GET req with accidental pwd inclusion in query params
