@@ -1,0 +1,16 @@
+FOOTHOLD:
+searchsploit 46698 for foothold
+
+USER:
+shitload of b64 encoded user details in /var/www/html/CuteNews/cdata/users
+one in particular contains hash for paul -> hashcat this for p = atlanta1
+
+USER2:
+users paul and nadav share authorized ssh key, thus can ssh directly ssh nadav@localhost
+
+ROOT:
+dbus exploit with usbcreator being run as root
+
+SEE: https://unit42.paloaltonetworks.com/usbcreator-d-bus-privilege-escalation-in-ubuntu-desktop/
+
+
