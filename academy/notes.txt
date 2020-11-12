@@ -1,0 +1,12 @@
+ip: 10.129.20.146
+add ip / academy.htb -- turns out redirect doesnt automatically resolve
+account created strangely doesn't reflect user once logged in - u: egre55
+dirbuster shows /admin.php -> maybe egre55?
+register has hidden roleid field -> burp to modify this
+login mentions staging domain -> add to hosts
+resulting error page has db creds: homested, secret (also mentions server_admin: admin@htb) - also has laravel APP_KEY
+APP_KEY = dBLUaMuZz7Iq06XtL/Xnz/90Ejq+DEEynggqubHWFj0=
+use msfconsole exploit/unix/http/laravel_token_unserialize_exec with VHOST defined
+cry0l1t3 has user.txt flag in home dir
+check web .env files in /var/www/html...etc -> USER1: u = cry0l1t3 p = mySup3rP4s5w0rd!!
+check audit logs for tty login -> USER2: u = mrb3n , p = mrb3n_Ac@d3my!
