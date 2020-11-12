@@ -11,3 +11,5 @@ FOR ROOT:
 notice that timer_backup.sh is owned by pericles and on the path.
 pspy output will show that this script is run periodically
 add reverse shell payload to timer_backup.sh for root
+
+https://blog.doyensec.com/2019/07/22/jackson-gadgets.html - FOR FUTURE JACKSON REF
