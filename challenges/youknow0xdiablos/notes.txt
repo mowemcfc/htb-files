@@ -1,0 +1,6 @@
+flag() entry loc: 0x080491e6
+
+vuln() entry loc: 0x08049276
+vuln() ret loc: 0x080492b0
+
+set {void(*)()} 0xffffd5dc = 0x080491e6
