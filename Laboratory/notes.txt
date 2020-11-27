@@ -1,0 +1,6 @@
+git.laboratory.htb domain required in /etc/hosts
+gitlab community edition 12.8.1
+https://twitter.com/chvancooten/status/1270374330380230657
+ 1) arbitrary file read using link functionality and moving an issue between repos
+ 2) RCE when parsing cookies signed with secret key
+SECRET_KEY_BASE: 3231f54b33e0c1ce998113c083528460153b19542a70173b4458a21e845ffa33cc45ca7486fc8ebb6b2727cc02feea4c3adbe2cc7b65003510e4031e164137b3

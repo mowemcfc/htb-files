@@ -59,7 +59,7 @@ try:
     PUTS_PLT = elf.plt['puts'] #PUTS_PLT = elf.symbols["puts"] # This is also valid to call puts
 except:
     PUTS_PLT = elf.plt['printf']
-MAIN_PLT = elf.symbols['main'] #Same as ROPgadget --binary vuln | grep "pop rdi"
+MAIN_PLT = elf.symbols['main']
 
 log.info("Main start: " + hex(MAIN_PLT))
 log.info("Puts plt: " + hex(PUTS_PLT))
