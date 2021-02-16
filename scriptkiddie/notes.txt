@@ -1,0 +1,13 @@
+INIT FOOTHOLD:
+
+msfvenom command injection apk exploit. generate with msfvenom and upload with listener
+
+LAT MOVEMENT:
+
+notice batch script that's run when /home/kid/logs/hackers is changed (/home/pwn/scanlosers.sh)
+
+get rev shell ass pwn -> see dm's w alex
+
+ROOT:
+
+sudo -l -> notice can run msfconsole as root -> sudo bash inside msfconsole   
